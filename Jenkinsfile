@@ -66,7 +66,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'docker service create --name address1 -p 31000:80 --replicas==4 rajkumar1005/addressbook:$BUILD_NUMBER'
+				sh 'docker service create --name address1 -p 31000:80 --replicas=4 rajkumar1005/addressbook:$BUILD_NUMBER'
 			}
 		}   
 	}
