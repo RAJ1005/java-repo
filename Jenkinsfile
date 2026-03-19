@@ -55,7 +55,7 @@ pipeline
 		{ 
 			steps
 			{   
-                withDockerRegistry([ credentialsId: 'docker-hub2', url: 'https://index.docker.io/v1/' ]) 
+                withDockerRegistry([ credentialsId: 'docker-hub3', url: 'https://index.docker.io/v1/' ]) 
                 {
                 sh 'docker push rajkumar1005/addressbook:$BUILD_NUMBER'
                 }
