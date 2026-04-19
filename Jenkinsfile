@@ -67,7 +67,7 @@ pipeline
 			steps
 			{
 				sh 'docker service rm address1'
-				sh 'docker service create --name address1 -p 31000:8080 --replicas=4 rajkumar1005/addressbook:$BUILD_NUMBER'
+				sh 'docker run -dt --name address1 -p 31000:8080 rajkumar1005/addressbook:$BUILD_NUMBER'
 			}
 		}   
     stage('Deploy to Kubernetes')
