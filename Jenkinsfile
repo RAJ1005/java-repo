@@ -66,7 +66,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'docker service rm address1'
+				sh 'docker rm -f address1'
 				sh 'docker run -dt --name address1 -p 31000:8080 rajkumar1005/addressbook:$BUILD_NUMBER'
 			}
 		}   
