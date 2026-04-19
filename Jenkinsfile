@@ -1,6 +1,10 @@
 pipeline
 {
 	agent any
+	environment 
+	{
+    USE_GKE_GCLOUD_AUTH_PLUGIN = "True"
+	}
 	tools
 	{
 	    maven 'maven399'
