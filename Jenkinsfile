@@ -76,7 +76,10 @@ pipeline
       {
         withKubeConfig(credentialsId: 'onpremk8s') 
         {
-            sh "sed -i 's/addressbook:latest/addressbook:$BUILD_NUMBER/g' addressbook.yaml"
+            sh 'echo USE_GKE_GCLOUD_AUTH_PLUGIN=$USE_GKE_GCLOUD_AUTH_PLUGIN'
+    		sh 'kubectl version --client'
+    		sh 'kubectl get nodes'
+			sh "sed -i 's/addressbook:latest/addressbook:$BUILD_NUMBER/g' addressbook.yaml"
             sh 'kubectl apply -f addressbook.yaml'
         }  
       }	
